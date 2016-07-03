@@ -1,6 +1,6 @@
 import React from 'react';
-import { Home } from './containers';
-import Main from './components/main/Main';
+import Main from './containers/main';
+import Home from './containers/home';
 import { Route, IndexRoute } from 'react-router';
 
 export default (
