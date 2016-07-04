@@ -1,13 +1,11 @@
 import { combineReducers } from 'redux';
-import { modelReducer, formReducer } from 'react-redux-form';
+import { formReducer } from 'react-redux-form';
+import { clientsReducer, clientReducer } from '../../helpers/modelReducers';
 import dialogModal from './dialogModal';
-
-// Custom model reducer
-const clientsReducer = modelReducer('clients', []);
 
 // Main reducer
 const mainReducer = combineReducers({
-  client: modelReducer('client', { name: '' }),
+  client: clientReducer,
   clients: clientsReducer,
   clientForm: formReducer('client'),
   dialogModal,

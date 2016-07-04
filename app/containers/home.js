@@ -4,6 +4,7 @@ import { callGetAllModel } from '../redux/actions/async-actions';
 import TableSimple from '../components/TableSimple';
 import FloatingActionButtonSimple from '../components/FloatingActionButton';
 import DialogModal from '../components/Dialog';
+import ClientForm from '../components/forms/clients';
 import { clientHeader } from '../helpers/headers';
 
 class Home extends Component {
@@ -19,7 +20,9 @@ class Home extends Component {
     return (
       <div>
         <FloatingActionButtonSimple />
-        <DialogModal />
+        <DialogModal>
+          <ClientForm />
+        </DialogModal>
         <TableSimple data={clients} headers={clientHeader} />
       </div>
     );

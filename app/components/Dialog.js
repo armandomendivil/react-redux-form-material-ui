@@ -13,12 +13,18 @@ class DialogModal extends Component {
     super(props);
 
     this.closeDialog = this.closeDialog.bind(this);
+    this.saveForm = this.saveForm.bind(this);
   }
 
   closeDialog() {
     const { dispatch } = this.props;
 
     dispatch(actionDialog('CLOSE_DIALOG'));
+  }
+
+  saveForm() {
+    const { dispatch } = this.props;
+
   }
 
   render() {
@@ -32,8 +38,8 @@ class DialogModal extends Component {
       <FlatButton
         label="Submit"
         primary
-        disabled
-        onTouchTap={this.handleClose}
+        disabled={false}
+        onTouchTap={this.saveForm}
       />,
     ];
 
@@ -45,7 +51,7 @@ class DialogModal extends Component {
           modal
           open={open}
         >
-          Only actions can close this dialog.
+          {this.props.children}
         </Dialog>
       </div>
     );
@@ -54,6 +60,7 @@ class DialogModal extends Component {
 
 DialogModal.propTypes = {
   dialogModal: React.PropTypes.object.isRequired,
+  children: React.PropTypes.element.isRequired,
   dispatch: React.PropTypes.func.isRequired,
 };
 
