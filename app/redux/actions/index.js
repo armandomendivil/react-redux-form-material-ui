@@ -22,10 +22,11 @@ export function remove(_id, type) {
   };
 }
 
-export function edit(type, data) {
+export function edit(_id, name, type) {
   return {
     type,
-    data,
+    _id,
+    name,
   };
 }
 

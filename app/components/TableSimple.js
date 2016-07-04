@@ -19,7 +19,7 @@ const TableSimple = (props) => (
           {props.headers.map((h, k) => (
             <TableRowColumn key={k}>{row[h.value]}</TableRowColumn>
           ))}
-          <TableRowColumn><IconMenuSimple id={row._id} /></TableRowColumn>
+          <TableRowColumn><IconMenuSimple id={row._id} model={props.model} /></TableRowColumn>
         </TableRow>
       ))}
     </TableBody>
@@ -29,6 +29,7 @@ const TableSimple = (props) => (
 TableSimple.propTypes = {
   data: React.PropTypes.array.isRequired,
   headers: React.PropTypes.array.isRequired,
+  model: React.PropTypes.string.isRequired,
 };
 
 export default TableSimple;

@@ -11,9 +11,9 @@ import { add, getAll, getOne, remove, edit } from './index';
  * @param {String} type [action type]
  * @return {void} null
  */
-export function callAdd(endpoint, data, type) {
+export function callAdd(endpoint, data) {
   return dispatch => asteroid.call(endpoint, data)
-      .then(result => dispatch(add(result, type)));
+      .then(result => dispatch(add(result, '')));
 }
 
 export function callGetAll(endpoint, type, id) {

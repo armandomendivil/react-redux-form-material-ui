@@ -10,8 +10,9 @@ export const asteroid = new Asteroid({
 
 // if you want realitme updates in all connected clients
 // subscribe to the publication
+asteroid.subscribe('clients');
+asteroid.subscribe('products');
 
-//
 asteroid.ddp.on('added', (doc) => {
   // we need proper document object format here
   const docObj = Object.assign({}, doc.fields, { _id: doc.id });
@@ -20,10 +21,11 @@ asteroid.ddp.on('added', (doc) => {
 });
 
 asteroid.ddp.on('removed', (removedDoc) => {
-  store.dispatch(remove(removedDoc.id));
+  const type = `remove_${removedDoc.collection}`.toUpperCase();
+  store.dispatch(remove(removedDoc.id, type));
 });
 
 asteroid.ddp.on('changed', (updatedDoc) => {
   const type = `EDIT_${updatedDoc.collection}`.toUpperCase();
-  store.dispatch(edit(updatedDoc.id, updatedDoc.fields, type));
+  store.dispatch(edit(updatedDoc.id, updatedDoc.fields.name, type));
 });

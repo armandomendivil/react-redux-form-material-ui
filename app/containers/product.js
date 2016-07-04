@@ -3,31 +3,31 @@ import { connect } from 'react-redux';
 import TableSimple from '../components/TableSimple';
 import FloatingActionButtonSimple from '../components/FloatingActionButton';
 import DialogModal from '../components/Dialog';
-import ClientForm from '../components/forms/clients';
-import { clientHeader } from '../helpers/headers';
+import ProductForm from '../components/forms/product';
+import { productHeader } from '../helpers/headers';
 
-const Home = (props) => {
-  const { clients } = props;
+const Product = (props) => {
+  const { products } = props;
   return (
     <div>
       <FloatingActionButtonSimple />
-      <DialogModal model={'Client'} >
-        <ClientForm />
+      <DialogModal model={'Product'} >
+        <ProductForm />
       </DialogModal>
-      <TableSimple data={clients} headers={clientHeader} model={'Client'} />
+      <TableSimple data={products} headers={productHeader} model={'Product'} />
     </div>
   );
 };
 
-Home.propTypes = {
-  clients: React.PropTypes.array.isRequired,
+Product.propTypes = {
+  products: React.PropTypes.array.isRequired,
   dispatch: React.PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  clients: state.clients,
+  products: state.products,
 });
 
 const mapDispatchToProps = (dispatch) => ({ dispatch });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

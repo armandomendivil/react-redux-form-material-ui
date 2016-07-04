@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, Form } from 'react-redux-form';
 
-const ClientForm = () => (
+const ProductForm = () => (
   <div>
     <Form model="client">
       <Field model="client.name">
@@ -12,8 +12,8 @@ const ClientForm = () => (
   </div>
 );
 
-ClientForm.propTypes = {
+ProductForm.propTypes = {
   client: React.PropTypes.object.isRequired,
 };
 
-export default connect(state => ({ client: state.client }))(ClientForm);
+export default connect(state => ({ client: state.client }))(ProductForm);
