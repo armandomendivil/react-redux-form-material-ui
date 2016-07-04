@@ -2,6 +2,12 @@
  * action types
  */
 
+export function actionDialog(type) {
+  return {
+    type,
+  };
+}
+
 export function add(data, type) {
   return {
     type,

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { callGetAllModel } from '../redux/actions/async-actions';
 import TableSimple from '../components/TableSimple';
+import FloatingActionButtonSimple from '../components/FloatingActionButton';
+import DialogModal from '../components/Dialog';
+import { clientHeader } from '../helpers/headers';
 
 class Home extends Component {
 
@@ -14,7 +17,11 @@ class Home extends Component {
   render() {
     const { clients } = this.props;
     return (
-      <TableSimple data={clients} />
+      <div>
+        <FloatingActionButtonSimple />
+        <DialogModal />
+        <TableSimple data={clients} headers={clientHeader} />
+      </div>
     );
   }
 }
