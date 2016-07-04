@@ -15,16 +15,6 @@ const MaterialField = createFieldClass({
 
 class ClientForm extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-  attachNode(node) {
-    this._form = ReactDOM.findDOMNode(node);
-  }
-  handleClick() {
-    this._form.submit();
-  }
   handleSubmit(val) {
     // Do anything you want with the form value
     console.log(val);
@@ -38,7 +28,6 @@ class ClientForm extends React.Component {
         <Form
           model="client"
           onSubmit={(val) => this.handleSubmit(val)}
-          ref={this.attachNode.bind(this)}
         >
           <h1>Hello, {client.name}!</h1>
           <MaterialField model="client.name">

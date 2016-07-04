@@ -27,7 +27,7 @@
     "react-flexbox-grid": "^0.9.6",
     "react-hot-loader": "^3.0.0-beta.1",
     "react-redux": "^4.4.5",
-    "react-redux-form": "^0.13.9",
+    "react-redux-form": "^0.13.10",
     "react-router": "~2.4.0",
     "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.5.2",
