@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import AppBarIcon from '../components/AppBar';
 
 const Main = (props) => (
   <div>
-    <h1>Main</h1>
+    <AppBarIcon name={'App Name'} />
     {props.children}
   </div>
 );
@@ -12,7 +12,4 @@ Main.propTypes = {
   children: React.PropTypes.element.isRequired,
 };
 
-const mapStateToProps = () => ({ });
-const mapDispatchToProps = () => ({ });
-
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default Main;
