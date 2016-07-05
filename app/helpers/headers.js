@@ -5,5 +5,5 @@ export const clientHeader = [
 ];
 
 export const productHeader = [
-  { label: 'ID', value: '_id' }, { label: 'Name', value: 'name' },
+  { label: 'ID', value: '_id' }, { label: 'Product Name', value: 'name' },
 ];

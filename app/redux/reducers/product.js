@@ -24,9 +24,13 @@ const edit = (state, action) => {
 
 const add = (state, action) => {
   const newItemId = action.data._id;
+
   const isNotUniq = state.find(i => i._id === newItemId);
   if (!isNotUniq) {
-    return state.concat([action.data]);
+    const obj = {};
+    obj.name = `${action.data.name} - ${action.data._id}`;
+    obj._id = action.data._id;
+    return state.concat([obj]);
   }
   return state;
 };
