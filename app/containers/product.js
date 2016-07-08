@@ -6,7 +6,7 @@ import DialogModal from '../components/Dialog';
 import ProductForm from '../components/forms/product';
 import { productHeader } from '../helpers/headers';
 
-const Home = (props) => {
+const Product = (props) => {
   const { products } = props;
   return (
     <div>
@@ -19,7 +19,7 @@ const Home = (props) => {
   );
 };
 
-Home.propTypes = {
+Product.propTypes = {
   products: React.PropTypes.array.isRequired,
   dispatch: React.PropTypes.func.isRequired,
 };
@@ -30,4 +30,4 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({ dispatch });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

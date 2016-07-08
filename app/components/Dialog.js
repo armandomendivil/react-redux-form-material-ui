@@ -52,7 +52,7 @@ class DialogModal extends Component {
     return (
       <div>
         <Dialog
-          title="Dialog With Actions"
+          title="MODAL"
           actions={actions}
           modal
           open={open}

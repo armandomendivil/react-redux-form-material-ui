@@ -1,13 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Field, Form } from 'react-redux-form';
+import { Form, controls, createFieldClass } from 'react-redux-form';
+import TextField from 'material-ui/TextField';
+
+const MaterialField = createFieldClass({
+  TextField: controls.text,
+}, {
+  componentMap: {
+    TextField,
+  },
+});
 
 const ClientForm = () => (
   <div>
     <Form model="client">
-      <Field model="client.name">
-        <input type="text" />
-      </Field>
+      <MaterialField model="client.name">
+        <TextField />
+      </MaterialField>
     </Form>
   </div>
 );
