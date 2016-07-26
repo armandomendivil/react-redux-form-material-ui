@@ -1,17 +1,18 @@
 import { combineReducers } from 'redux';
-import { formReducer } from 'react-redux-form';
-import { clientReducer } from '../../helpers/modelReducers';
+import { clientReducer, clientForm } from '../../helpers/modelReducers';
 import clients from './client';
 import products from './product';
 import dialogModal from './dialogModal';
+import paginate from './paginate';
 
 // Main reducer
 const mainReducer = combineReducers({
   client: clientReducer,
+  clientForm,
   clients,
   products,
-  clientForm: formReducer('client'),
   dialogModal,
+  paginate,
 });
 
 export default mainReducer;

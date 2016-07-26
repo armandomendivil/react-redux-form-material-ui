@@ -16,6 +16,20 @@ export function callAdd(endpoint, data) {
       .then(result => dispatch(add(result, '')));
 }
 
+export function pagination(endpoint, params) {
+  return dispatch => asteroid.call(endpoint, params)
+      .then(result => {
+        dispatch(getAll(result[0], 'GET_ALL_CLIENTS'));
+        const meta = result[1];
+        const pageNum = Math.ceil(meta.total_count / meta.limit);
+        dispatch({
+          type: 'CHANGE_PAGINATION',
+          data: pageNum,
+        });
+      })
+      .catch(err => { console.log(err); });
+}
+
 export function callGetAll(endpoint, type, id) {
   return dispatch => asteroid.call(endpoint, id)
       .then((result) => dispatch(getAll(result, type)));

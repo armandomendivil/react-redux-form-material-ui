@@ -13,12 +13,12 @@ export const asteroid = new Asteroid({
 asteroid.subscribe('clients');
 asteroid.subscribe('products');
 
-asteroid.ddp.on('added', (doc) => {
-  // we need proper document object format here
-  const docObj = Object.assign({}, doc.fields, { _id: doc.id });
-  const type = `add_${doc.collection}`.toUpperCase();
-  store.dispatch(add(docObj, type));
-});
+// asteroid.ddp.on('added', (doc) => {
+//   // we need proper document object format here
+//   const docObj = Object.assign({}, doc.fields, { _id: doc.id });
+//   const type = `add_${doc.collection}`.toUpperCase();
+//   store.dispatch(add(docObj, type));
+// });
 
 asteroid.ddp.on('removed', (removedDoc) => {
   const type = `remove_${removedDoc.collection}`.toUpperCase();
